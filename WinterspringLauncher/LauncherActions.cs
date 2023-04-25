@@ -314,7 +314,7 @@ public static class LauncherActions
         bool weAreOnMacOs = RuntimeInformation.IsOSPlatform(OSPlatform.OSX);
         
         //TODO: tell user if openssl library is not installed
-        var opensslLibrary = weAreOnMacOs ? "DYLD_LIBRARY_PATH=/opt/homebrew/opt/openssl@3/lib " : ""
+        var opensslLibrary = weAreOnMacOs ? "DYLD_LIBRARY_PATH=/opt/homebrew/opt/openssl@3/lib " : "";
             
         var executableName = weAreOnMacOs
             ? "HermesProxy"
