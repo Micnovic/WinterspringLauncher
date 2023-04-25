@@ -312,7 +312,7 @@ public static class LauncherActions
     public static Process StartHermesProxyAndWaitTillEnd(string hermesPath)
     {
         bool weAreOnMacOs = RuntimeInformation.IsOSPlatform(OSPlatform.OSX);
-           
+
         var executableName = weAreOnMacOs
             ? "HermesProxy"
             : "HermesProxy.exe";
