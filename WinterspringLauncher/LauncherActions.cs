@@ -312,12 +312,14 @@ public static class LauncherActions
     public static Process StartHermesProxyAndWaitTillEnd(string hermesPath)
     {
         bool weAreOnMacOs = RuntimeInformation.IsOSPlatform(OSPlatform.OSX);
-
+        
+        var opensslLibrary = weAreOnMacOs ? "DYLD_LIBRARY_PATH=/opt/homebrew/opt/openssl@3/lib " : ""
+            
         var executableName = weAreOnMacOs
             ? "HermesProxy"
             : "HermesProxy.exe";
 
-        var executablePath = Path.Combine(hermesPath, executableName);
+        var executablePath = Path.Combine(opensslLibrary, hermesPath, executableName);
         
         Console.WriteLine("Starting HermesProxy...");
         var process = Process.Start(new ProcessStartInfo{
