@@ -19,7 +19,7 @@ public class LauncherConfig
     public string MacGameDownloadUrl { get; set; } = DEFAULT_CONFIG_VALUE;
     public string GamePatcherUrl { get; set; } = DEFAULT_CONFIG_VALUE;
 
-    public string HermesProxyPath { get; set; } = "./hermes-proxy";
+    public string HermesProxyPath { get; set; } = "DYLD_LIBRARY_PATH=/opt/homebrew/opt/openssl@3/lib ./hermes-proxy";
     public string GamePath { get; set; } = "./World of Warcraft 1.14.0";
     public string ArctiumLauncherPath { get; set; } = "./arctium-launcher";
     public bool RecreateDesktopShortcut { get; set; } = !RuntimeInformation.IsOSPlatform(OSPlatform.OSX);
